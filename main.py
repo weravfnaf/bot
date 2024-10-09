@@ -62,4 +62,3 @@ async def Help(ctx):
 
 
 
-bot.run("MTIyNzIyNjk2MjMyNjcxNjUxNg.GwzbZy.NE1z7AKSbbBrjTtV1V_XsS8b5c0IAAl7Ca1_Oc")
