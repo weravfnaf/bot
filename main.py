@@ -3,10 +3,16 @@ import random
 from discord.ext import commands
 import os
 
+
 intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix='', intents=intents)
 
+@bot.event
+async def on_ready():
+    channel = bot.get_channel(1298657392916955258)  
+    if channel is not None:
+        await channel.send("Чем могу помочь?")
 
 @bot.command()
 async def Фотки_глобального_потепление(ctx):
@@ -115,15 +121,29 @@ async def сколько_человек_тебя_создает(ctx):
     await ctx.send(f'3')
 
 @bot.command()
+async def Во_что_можно_поиграть(ctx):
+    await ctx.send(f'Rust ,CS2 ,Subnatica ,Among Us ,Deadlock ,Dota 2 ,Unturned ,Minecraft ,Roblox ,Stumble Guys ,Brawl Stars')
+
+@bot.command()
+async def во_что_можно_поиграть(ctx):
+    await ctx.send(f'Rust ,CS2 ,Subnatica ,Among Us ,Deadlock ,Dota 2 ,Unturned ,Minecraft ,Roblox ,Stumble Guys ,Brawl Stars')
+
+@bot.command()
 async def info(ctx):
-    await ctx.send(f'здравствуйте это info и в данный момент у нас есть команды: 1)Что-такое-глобальное-потепление 2)Что-сейчас-с-потеплением') 
+    await ctx.send(f'здравствуйте это info и в данный момент у нас есть команды: 1)Что-такое-глобальное-потепление 2)Что-сейчас-с-потеплением 3)фотки_глобального_потепление 4)Во-что-можно-поиграть. Да и вообще здесь есть много простых команд по типу: как-тебя-зовут или кто-тебя-создал')
+
 
 @bot.command()
 async def Info(ctx):
-    await ctx.send(f'здравствуйте это info и в данный момент у нас есть команды: 1)Что-такое-глобальное-потепление 2)Что-сейчас-с-потеплением')
+    await ctx.send(f'здравствуйте это info и в данный момент у нас есть команды: 1)Что-такое-глобальное-потепление 2)Что-сейчас-с-потеплением 3)фотки-глобальногопотепление 4)Во-что-можно-поиграть. Да и вообще здесь есть много простых команд по типу: как-тебя-зовут или кто-тебя-создал')
 
+@bot.command()
+async def secretinfo(ctx):
+    await ctx.send(f'секретное инfo: есть мемасы(meme) и "аллея авторов"(avtor)')
 
-
+@bot.command()
+async def Secretinfo(ctx):
+    await ctx.send(f'секретное инfo: есть мемасы(meme) и "аллея авторов"(avtor)')
 
 #------------------------------Глобальное Потепление------------------------------#
 @bot.command()
@@ -142,5 +162,76 @@ async def Что_такое_глобальное_потепление(ctx):
 async def что_такое_глобальное_потепление(ctx):
     await ctx.send(f'Глоба́льное потепле́ние — долгосрочное повышение средней температуры климатической системы Земли, происходящее уже более века, основной причиной чего, по мнению подавляющего большинства учёных, является человеческая деятельность (антропогенный фактор)[⇨].Повышение температуры поверхности Земли с конца XIX века.Начиная с 1850 года, в десятилетнем масштабе температура воздуха в каждое десятилетие была выше, чем в любое предшествующее десятилетие. С 1750—1800 годов человек ответственен за повышение средней глобальной температуры на 0,8—1,2 °C. Вероятная величина дальнейшего роста температуры на протяжении XXI века на основе климатических моделей составляет 0,3—1,7 °C для минимального сценария эмиссии парниковых газов, 2,6—4,8 °C — для сценария максимальной эмиссии.Последствия глобального потепления включают повышение уровня моря, региональные изменения осадков, более частые экстремальные погодные явления[англ.], такие как жара и расширение пустынь[⇨]. Как указывается на сайте ООН, существуют тревожные свидетельства того, что превышение пороговых показателей, ведущее к необратимым изменениям в экосистемах и климатической системе нашей планеты, уже произошло.')
 
+@bot.command()
+async def Надо_делать_f(ctx):
+    images = os.listdir('image1')
+    rand_image = random.choice(images)
+    with open(f'image1/{rand_image}', 'rb') as f:
+        picture = discord.File(f)
+    await ctx.send(file=picture)
+
+@bot.command()
+async def надо_делать_f(ctx):
+    images = os.listdir('image1')
+    rand_image = random.choice(images)
+    with open(f'image1/{rand_image}', 'rb') as f:
+        picture = discord.File(f)
+    await ctx.send(file=picture)
+
+@bot.command()
+async def Не_надо_делать_f(ctx):
+    images = os.listdir('image2')
+    rand_image = random.choice(images)
+    with open(f'image2/{rand_image}', 'rb') as f:
+        picture = discord.File(f)
+    await ctx.send(file=picture)
+    
+    
+@bot.command()
+async def не_надо_делать_f(ctx):
+    images = os.listdir('image2')
+    rand_image = random.choice(images)
+    with open(f'image2/{rand_image}', 'rb') as f:
+        picture = discord.File(f)
+    await ctx.send(file=picture)
+
+@bot.command()
+async def meme(ctx):
+    images = os.listdir('magesmem')
+    rand_image = random.choice(images)
+    with open(f'magesmem/{rand_image}', 'rb') as f:
+        picture = discord.File(f)
+    await ctx.send(file=picture)
+
+@bot.command()
+async def Meme(ctx):
+    images = os.listdir('magesmem')
+    rand_image = random.choice(images)
+    with open(f'magesmem/{rand_image}', 'rb') as f:
+        picture = discord.File(f)
+    await ctx.send(file=picture)
+
+@bot.command()
+async def Avtor(ctx):
+    await ctx.send(f'авторы Артём или Artmag(artемаг,артемаг) занимался инфо и секретами , Джамал или Jm занимался базовыми командами, Семён или "какой-то чел" или spinatic. занимался командами и поиском инфы')
+
+@bot.command()
+async def avtor(ctx):
+    await ctx.send(f'авторы Артём или Artmag(artемаг,артемаг) занимался инфо и секретами , Джамал или Jm занимался базовыми командами, Семён или "какой-то чел" или spinatic. занимался командами и поиском инфы')
 
 
+@bot.command()
+async def Посхалочка(ctx):
+    await ctx.send(f'https://www.youtube.com/watch?v=dQw4w9WgXcQhttps://www.youtube.com/watch?v=dQw4w9WgXcQ')
+
+@bot.command()
+async def посхалочка(ctx):
+    await ctx.send(f'https://www.youtube.com/watch?v=dQw4w9WgXcQhttps://www.youtube.com/watch?v=dQw4w9WgXcQ')
+
+@bot.command()
+async def откуда_инфа(ctx):
+     WWW.WIKIPEDIA.COM, а чего вы ожидали что я отвечу?
+
+@bot.command()
+async def Откуда_инфа(ctx):
+     WWW.WIKIPEDIA.COM, а чего вы ожидали что я отвечу?
